@@ -1,0 +1,8 @@
+#git+https://github.com/pytorch/fairseq.git@main
+git+https://github.com/CoderPat/COMET.git@master
+git+https://github.com/Unbabel/wmt21-qe-task.git@MBART-without-uncertainty
+git+https://github.com/mjpost/sacrebleu@master
+transquest
+sentencepiece
+sacremoses
+fastbpe
