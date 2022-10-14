@@ -50,6 +50,11 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+analysis/
+data/
+models/
+slurm*
+.vscode/
 
 # Translations
 *.mo

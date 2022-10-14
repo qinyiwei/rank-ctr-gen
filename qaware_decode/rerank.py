@@ -380,7 +380,7 @@ def main():
         if qe_metric == "classifier_toxicity":
             qe_metrics.append(ToxicityScorer(args.weights_path, args.meta_path, args.batch_size))
         elif qe_metric == "ppl":
-            qe_metrics.append(Perplexity(ppl_model=args.ppl_mdoel))
+            qe_metrics.append(Perplexity(ppl_model=args.ppl_model))
         elif qe_metric == "dist":
             qe_metrics.append(distinctness)
         else:
@@ -404,8 +404,8 @@ def main():
     
     out_file_name = args.hyps.split("/")[-1].split('.')[0] \
         + "_" + "_".join(args.qe_metrics) + "_rerank_generations.jsonl"
-    if "ppl" in args.qe_metrics and args.ppl_mdoel != "gpt2-xl":
-        out_file_name = out_file_name.replace("ppl","ppl_{}".format(args.ppl_mdoel))
+    if "ppl" in args.qe_metrics and args.ppl_model != "gpt2-xl":
+        out_file_name = out_file_name.replace("ppl","ppl_{}".format(args.ppl_model))
     save_generations(predictions, os.path.join(args.output_dir,out_file_name))
 
 
